@@ -5,5 +5,5 @@ class PasswordService(ABC):
     def hash_password(self, password: str) -> str:
         pass
     @abstractmethod
-    def verify_password(self, password: str) -> bool:
+    def verify_password(self, plain: str, hashed: str) -> bool:
         pass
