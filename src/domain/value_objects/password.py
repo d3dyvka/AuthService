@@ -8,11 +8,11 @@ class Password:
     def __post_init__(self) -> None:
         errors = []
         if len(self.value) < 8:
-            errors.append("Пароль не может быть меньше 8 символов")
+            errors.append("Password must be at least 8 characters")
         if not any(c.isdigit() for c in self.value):
-            errors.append("Пароль должен содержать хотя бы 1 число")
+            errors.append("Password must contain at least one digit")
         if not any(c.isalpha() for c in self.value):
-            errors.append("Пароль должен содержать хотя бы 1 букву")
+            errors.append("Password must contain at least one letter")
         if errors:
             raise ValueError("; ".join(errors))
 
